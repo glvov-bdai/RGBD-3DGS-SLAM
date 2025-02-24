@@ -24,3 +24,4 @@ RUN conda init bash && \
 RUN conda create --name rgbd-3dgs-slam python=3.10 -y
 SHELL ["conda", "run", "-n", "rgbd-3dgs-slam", "/bin/bash", "-c"]
 RUN source /workspace/RGBD-3DGS-SLAM/install.sh
+RUN echo "conda activate rgbd-3dgs-slam" >> ~/.bashrc
