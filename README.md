@@ -35,6 +35,13 @@ There is also enviroment.yml file, you can install or use as a reference using
 conda env create -f environment.yml
 ```
 
+Alternatively, this repo can be run from within Docker, provided that the NVIDIA Container Toolkit is [properly installed](https://github.com/garylvov/dev_env/tree/main/setup_scripts/nvidia).
+
+```
+docker build -t 3dgsslam:latest . # This may take a few minutes 
+docker run --gpus all --network host -v $(pwd):/workspace/RGBD-3DGS-SLAM --rm -it 3dgsslam /bin/bash
+```
+
 ## Downloading TUM dataset
 ```
 cd MonoGS && bash scripts/download_tum.sh
